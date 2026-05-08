@@ -1,5 +1,12 @@
-let total = 0;
+// ===============================
+// NOTE:
+// This JavaScript section was
+// created with AI assistance
+// because I currently have
+// no experience in JavaScript.
+// ===============================
 
+let total = 0;
 function addTask(){
 
     const subject = document.getElementById("subject").value;
