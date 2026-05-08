@@ -1,14 +1,16 @@
 # 🚀 Custom Timetable Generator
 
-A modern and interactive timetable generator built with HTML, CSS, and JavaScript.
+A modern and interactive timetable generator built with HTML, CSS, and JavaScript
 
-## 🌟 Features
+# 🚀 Future Improvements
 
-- Add custom study sessions
-- Delete timetable cards
-- Track total study hours
-- Modern dark UI
-- Responsive design
+- 💾 Save timetable using Local Storage
+- 🌙 Dark / Light Mode
+- ✏️ Edit Timetable Cards
+- 🔔 Reminder Notifications
+- 📊 Statistics Dashboard
+- ☁️ Database Integration
+- 👤 User Accounts
 
 ## 🛠️ Technologies
 
@@ -26,18 +28,6 @@ A modern and interactive timetable generator built with HTML, CSS, and JavaScrip
 
 Made with focus and discipline.
 
-# 🌟 Features
-
-- 🎨 Modern Dark UI Design
-- 📚 Custom Subject Input
-- ⏰ Start & End Time Selection
-- 🧮 Total Study Hours Counter
-- ➕ Add Timetable Cards
-- 🗑 Delete Study Sessions
-- 📱 Responsive Design
-- ⚡ Fast and Lightweight
-- 💻 Pure HTML, CSS & JavaScript
-
 ###java part :
 // ===============================
 // NOTE:
@@ -46,3 +36,5 @@ Made with focus and discipline.
 // because I currently have
 // no experience in JavaScript.
 // ===============================
+
+
