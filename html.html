@@ -1,218 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                    <title>Custom Timetable Generator</title>
+<title>Custom Timetable Generator</title>
 
-                    <style>
-                                        body {
-                                                            margin: 0;
-                                                            padding: 0;
-                                                            font-family: Segoe UI, sans-serif;
-                                                            background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
-                                                            color: white;
-                                                            min-height: 100vh;
-                                        }
+<style>
 
-                                        .container {
-                                                            width: 90%;
-                                                            max-width: 1100px;
-                                                            margin: 40px auto;
-                                        }
+body{
+    margin:0;
+    padding:0;
+    font-family:Segoe UI, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+    color:white;
+    min-height:100vh;
+}
 
-                                        .title {
-                                                            text-align: center;
-                                                            padding: 30px;
-                                                            background: linear-gradient(to right, #3b82f6, #9333ea);
-                                                            border-radius: 25px;
-                                                            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-                                        }
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+}
 
-                                        .title h1 {
-                                                            margin: 0;
-                                                            font-size: 3rem;
-                                        }
+.title{
+    text-align:center;
+    padding:30px;
+    background:linear-gradient(to right,#3b82f6,#9333ea);
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
 
-                                        .creator-box {
-                                                            margin-top: 35px;
-                                                            background: rgba(15, 23, 42, 0.95);
-                                                            padding: 35px;
-                                                            border-radius: 25px;
-                                                            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-                                        }
+.title h1{
+    margin:0;
+    font-size:3rem;
+}
 
-                                        .creator-box h2 {
-                                                            text-align: center;
-                                                            color: #60a5fa;
-                                        }
+.creator-box{
+    margin-top:35px;
+    background:rgba(15,23,42,0.95);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
 
-                                        .inputs {
-                                                            display: flex;
-                                                            flex-wrap: wrap;
-                                                            gap: 15px;
-                                                            justify-content: center;
-                                                            margin-top: 25px;
-                                        }
+.creator-box h2{
+    text-align:center;
+    color:#60a5fa;
+}
 
-                                        input {
-                                                            padding: 14px;
-                                                            border: none;
-                                                            border-radius: 12px;
-                                                            width: 220px;
-                                                            background: #1e293b;
-                                                            color: white;
-                                                            font-size: 1rem;
-                                                            outline: none;
-                                        }
+.inputs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+    margin-top:25px;
+}
 
-                                        .add-btn {
-                                                            padding: 14px 25px;
-                                                            border: none;
-                                                            border-radius: 14px;
-                                                            background: linear-gradient(to right, #3b82f6, #9333ea);
-                                                            color: white;
-                                                            font-size: 1rem;
-                                                            cursor: pointer;
-                                                            font-weight: bold;
-                                                            transition: 0.3s;
-                                        }
+input{
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    width:220px;
+    background:#1e293b;
+    color:white;
+    font-size:1rem;
+    outline:none;
+}
 
-                                        .add-btn:hover {
-                                                            transform: scale(1.05);
-                                        }
+.add-btn{
+    padding:14px 25px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(to right,#3b82f6,#9333ea);
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-                                        .schedule {
-                                                            margin-top: 35px;
-                                                            display: grid;
-                                                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                                                            gap: 20px;
-                                        }
+.add-btn:hover{
+    transform:scale(1.05);
+}
 
-                                        .card {
-                                                            background: #1e293b;
-                                                            padding: 25px;
-                                                            border-radius: 20px;
-                                                            border: 2px solid #3b82f6;
-                                                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-                                                            position: relative;
-                                        }
+.schedule{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-                                        .card h3 {
-                                                            margin-top: 0;
-                                                            color: #60a5fa;
-                                        }
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:20px;
+    border:2px solid #3b82f6;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    position:relative;
+}
 
-                                        .delete-btn {
-                                                            margin-top: 15px;
-                                                            width: 100%;
-                                                            padding: 12px;
-                                                            border: none;
-                                                            border-radius: 12px;
-                                                            background: #ef4444;
-                                                            color: white;
-                                                            cursor: pointer;
-                                                            font-weight: bold;
-                                                            transition: 0.3s;
-                                        }
+.card h3{
+    margin-top:0;
+    color:#60a5fa;
+}
 
-                                        .delete-btn:hover {
-                                                            background: #dc2626;
-                                        }
+.delete-btn{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#ef4444;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-                                        .total {
-                                                            margin-top: 35px;
-                                                            background: #111827;
-                                                            padding: 25px;
-                                                            border-radius: 20px;
-                                                            text-align: center;
-                                                            font-size: 1.3rem;
-                                                            border: 2px solid #9333ea;
-                                        }
+.delete-btn:hover{
+    background:#dc2626;
+}
 
-                                        .empty {
-                                                            text-align: center;
-                                                            opacity: 0.7;
-                                                            margin-top: 25px;
-                                        }
-                    </style>
+.total{
+    margin-top:35px;
+    background:#111827;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    font-size:1.3rem;
+    border:2px solid #9333ea;
+}
+
+.empty{
+    text-align:center;
+    opacity:0.7;
+    margin-top:25px;
+}
+
+</style>
 </head>
 
 <body>
 
-                    <div class="container">
+<div class="container">
 
-                                        <div class="title">
-                                                            <h1>🚀 Custom Timetable Generator</h1>
-                                                            <p>Create your own study timetable</p>
-                                        </div>
+    <div class="title">
+        <h1>🚀 Custom Timetable Generator</h1>
+        <p>Create your own study timetable</p>
+    </div>
 
-                                        <div class="creator-box">
+    <div class="creator-box">
 
-                                                            <h2>📚 Add Study Session</h2>
+        <h2>📚 Add Study Session</h2>
 
-                                                            <div class="inputs">
+        <div class="inputs">
 
-                                                                                <input type="text" id="subject"
-                                                                                                    placeholder="Subject Name">
+            <input type="text" id="subject" placeholder="Subject Name">
 
-                                                                                <input type="time" id="start">
+            <input type="time" id="start">
 
-                                                                                <input type="time" id="end">
+            <input type="time" id="end">
 
-                                                                                <input type="number" id="hours"
-                                                                                                    placeholder="Hours">
+            <input type="number" id="hours" placeholder="Hours">
 
-                                                                                <button class="add-btn"
-                                                                                                    onclick="addTask()">➕
-                                                                                                    Add</button>
+            <button class="add-btn" onclick="addTask()">➕ Add</button>
 
-                                                            </div>
+        </div>
 
-                                                            <div id="schedule" class="schedule">
-                                                                                <p class="empty" id="emptyText">
-                                                                                                    No timetable created
-                                                                                                    yet...
-                                                                                </p>
-                                                            </div>
+        <div id="schedule" class="schedule">
+            <p class="empty" id="emptyText">
+                No timetable created yet...
+            </p>
+        </div>
 
-                                                            <div class="total">
-                                                                                ⏰ Total Study Hours:
-                                                                                <span id="totalHours">0</span>
-                                                                                Hours
-                                                            </div>
+        <div class="total">
+            ⏰ Total Study Hours:
+            <span id="totalHours">0</span>
+            Hours
+        </div>
 
-                                        </div>
+    </div>
 
-                    </div>
+</div>
 
-                    <script>
+<script>
 
-                                        let total = 0;
+let total = 0;
 
-                                        function addTask() {
+function addTask(){
 
-                                                            const subject = document.getElementById("subject").value;
-                                                            const start = document.getElementById("start").value;
-                                                            const end = document.getElementById("end").value;
-                                                            const hours = document.getElementById("hours").value;
+    const subject = document.getElementById("subject").value;
+    const start = document.getElementById("start").value;
+    const end = document.getElementById("end").value;
+    const hours = document.getElementById("hours").value;
 
-                                                            if (subject === "" || start === "" || end === "" || hours === "") {
-                                                                                alert("Please fill all inputs");
-                                                                                return;
-                                                            }
+    if(subject === "" || start === "" || end === "" || hours === ""){
+        alert("Please fill all inputs");
+        return;
+    }
 
-                                                            document.getElementById("emptyText").style.display = "none";
+    document.getElementById("emptyText").style.display = "none";
 
-                                                            const schedule = document.getElementById("schedule");
+    const schedule = document.getElementById("schedule");
 
-                                                            const card = document.createElement("div");
+    const card = document.createElement("div");
 
-                                                            card.classList.add("card");
+    card.classList.add("card");
 
-                                                            card.innerHTML = `
+    card.innerHTML = `
         <h3>📘 ${subject}</h3>
         <p>🕒 ${start} - ${end}</p>
         <p>⏳ ${hours} Hours</p>
@@ -222,37 +218,36 @@
         </button>
     `;
 
-                                                            schedule.appendChild(card);
+    schedule.appendChild(card);
 
-                                                            total += Number(hours);
+    total += Number(hours);
 
-                                                            document.getElementById("totalHours").textContent = total;
+    document.getElementById("totalHours").textContent = total;
 
-                                                            const deleteBtn = card.querySelector(".delete-btn");
+    const deleteBtn = card.querySelector(".delete-btn");
 
-                                                            deleteBtn.onclick = function () {
+    deleteBtn.onclick = function(){
 
-                                                                                total -= Number(hours);
+        total -= Number(hours);
 
-                                                                                document.getElementById("totalHours").textContent = total;
+        document.getElementById("totalHours").textContent = total;
 
-                                                                                card.remove();
+        card.remove();
 
-                                                                                if (schedule.children.length === 0) {
-                                                                                                    document.getElementById("emptyText").style.display = "block";
-                                                                                }
+        if(schedule.children.length === 0){
+            document.getElementById("emptyText").style.display = "block";
+        }
 
-                                                            };
+    };
 
-                                                            document.getElementById("subject").value = "";
-                                                            document.getElementById("start").value = "";
-                                                            document.getElementById("end").value = "";
-                                                            document.getElementById("hours").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("start").value = "";
+    document.getElementById("end").value = "";
+    document.getElementById("hours").value = "";
 
-                                        }
+}
 
-                    </script>
+</script>
 
 </body>
-
 </html>
