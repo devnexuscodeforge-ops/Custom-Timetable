@@ -24,7 +24,7 @@ A modern and interactive timetable generator built with HTML, CSS, and JavaScrip
 2. Open index.html
 3. Start creating your timetable
 
-###java part :
+###javaScript_part :
 // ===============================
 // NOTE:
 // This JavaScript section was
